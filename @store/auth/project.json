@@ -1,0 +1,36 @@
+{
+  "name": "@store/auth",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "@store/auth/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["type:store", "scope:auth"],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "@store/auth/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "@store/auth/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "@store/auth/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "@store/auth/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
