@@ -1,10 +1,15 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nx"],
+  "plugins": ["@nx", "@ngrx"],
   "overrides": [
     {
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": "tsconfig.base.json"
+      },
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "extends": ["plugin:@ngrx/all"],
       "rules": {
         "@nx/enforce-module-boundaries": [
           "error",
