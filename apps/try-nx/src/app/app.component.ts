@@ -11,4 +11,8 @@ import { NxWelcomeComponent } from './nx-welcome.component';
 })
 export class AppComponent {
   title = 'try-nx';
+
+  constructor() {
+    console.log('AppComponent');
+  }
 }
